@@ -8,17 +8,17 @@ import rw.ac.rca.mis.rcamis.util.HibernateUtil;
 
 import java.time.LocalDate;
 
-public class StudentServices {
+public class StudentService {
     protected static SessionFactory sf = HibernateUtil.getSessionFactory();
     protected static Session session ;
-    protected static StudentServices studentService;
-    public StudentServices getInstance() {
-        if (studentService == null) {
-            return new StudentServices();
-            return studentService;
-        }
+    protected static StudentService studentService;
+    public StudentService getInstance() {
+        if (studentService == null)
+            return new StudentService();
+        return studentService;
+
     }
-    private StudentServices(){
+    private StudentService(){
 
     }
     public void add(Student student) {
