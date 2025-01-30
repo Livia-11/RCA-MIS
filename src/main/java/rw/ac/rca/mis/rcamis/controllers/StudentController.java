@@ -7,8 +7,11 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import rw.ac.rca.mis.rcamis.models.Student;
+import rw.ac.rca.mis.rcamis.services.StudentService;
 
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 /**
  * Servlet implementation class StudentController
@@ -16,6 +19,7 @@ import java.io.IOException;
 @WebServlet("/StudentController")
 public class StudentController extends HttpServlet {
     private static final long serialVersionUID = 1L;
+    StudentService service=StudentService.getInstance();
 
     /**
      * @see HttpServlet#HttpServlet()
@@ -29,21 +33,35 @@ public class StudentController extends HttpServlet {
      * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
      */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    String namef=request.getParameter("fname");
-    String namel=request.getParameter("lname");
-    String email=request.getParameter("email");
-    Student student1 = new Student(namef,namel,email, 12);
+
+        String fname = request.getParameter("fname");
+        String lname = request.getParameter("lname");
+        String email = request.getParameter("email");
+        DateTimeFormatter pattern = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        String date = "2005-02-20";
+        LocalDate dob = LocalDate.parse(date, pattern);
+        Student student1 = new Student(fname,lname,email, 12,dob);
+        service.addStudent(student1);
+        request.getRequestDispatcher("WEB-INF/students.jsp").forward(request, response);
     }
 
     /**
      * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
      */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // TODO Auto-generated method stub
-        doGet(request, response);
+        String fname = request.getParameter("fname");
+        String lname = request.getParameter("lname");
+        String email = request.getParameter("email");
+        DateTimeFormatter pattern = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        String date = "2005-02-20";
+        LocalDate dob = LocalDate.parse(date, pattern);
+        Student student1 = new Student(fname,lname,email, 12,dob);
+        service.addStudent(student1);
+        request.getRequestDispatcher("WEB-INF/students.jsp").forward(request, response);
     }
 
 }
+
 
 
 
