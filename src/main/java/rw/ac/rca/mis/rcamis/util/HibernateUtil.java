@@ -23,9 +23,9 @@ public class HibernateUtil {
             settings.put(Environment.DRIVER, "com.mysql.cj.jdbc.Driver");
             //Postgresql
             //	settings.put(Environment.URL, "jdbc:postgresql://localhost:3306/myapp");
-            settings.put(Environment.URL, "jdbc:mysql://localhost:3306/mymis_db");
-            settings.put(Environment.USER, "damascene10");
-            settings.put(Environment.PASS, "Rca@123!");
+            settings.put(Environment.URL, "jdbc:mysql://localhost:3306/rcamis_db");
+            settings.put(Environment.USER, "root");
+            settings.put(Environment.PASS, "");
             //PostgreSQL
             //settings.put(Environment.DIALECT, "org.hibernate.dialect.PostgreSQLDialect");
             settings.put(Environment.SHOW_SQL, true);
