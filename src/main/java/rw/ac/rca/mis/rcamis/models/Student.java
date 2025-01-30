@@ -2,15 +2,20 @@ package rw.ac.rca.mis.rcamis.models;
 
 import java.time.LocalDate;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name="abanyeshuri")
 public class Student {
     @Id
     private int id;
+    @Column(name="fname",nullable=false,length=50)
     private String firstName;
     private String lastName;
+    @Column(unique=true)
     private String email;
     private int age;
     private LocalDate dob;
