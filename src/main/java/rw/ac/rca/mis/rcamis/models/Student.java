@@ -2,15 +2,13 @@ package rw.ac.rca.mis.rcamis.models;
 
 import java.time.LocalDate;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name="abanyeshuri")
 public class Student {
     @Id
+    @GeneratedValue
     private int id;
     @Column(name="fname",nullable=false,length=50)
     private String firstName;

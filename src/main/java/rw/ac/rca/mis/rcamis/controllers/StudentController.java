@@ -6,6 +6,8 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import rw.ac.rca.mis.rcamis.models.Student;
+
 import java.io.IOException;
 
 /**
@@ -27,8 +29,10 @@ public class StudentController extends HttpServlet {
      * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
      */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // TODO Auto-generated method stub
-        response.getWriter().append("Served at: ").append(request.getContextPath());
+    String namef=request.getParameter("fname");
+    String namel=request.getParameter("lname");
+    String email=request.getParameter("email");
+    Student student1 = new Student(namef,namel,email, 12);
     }
 
     /**
