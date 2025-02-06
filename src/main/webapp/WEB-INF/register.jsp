@@ -10,24 +10,44 @@
 <body>
 <form action="StudentController" method="POST">
     <label> ID</label><input type="text" name="id"><br>
-    <label> Name</label><input type="text" name="name"><br>
+    <label> FirstName</label><input type="text" name="fname"><br>
+    <label> LastName</label><input type="text" name="lname"><br>
     <label> Email</label><input type="text" name="email"><br>
     <input type="submit" value="Register">
 </form>
+
 <h2> List of students</h2>
-<table>
-    <tr>
-        <th> Id</th>
-        <th> Name</th>
-    </tr>
+<%--<table>--%>
+<%--    <tr>--%>
+<%--        <th> Id</th>--%>
+<%--        <th> FirstName</th>--%>
+<%--        <th> LastName</th>--%>
+<%--        <th> Email</th>--%>
+<%--        <th> Dob</th>--%>
+<%--        <th> Age</th>--%>
 
-    <c:forEach var="student" items="${students}">
-        <tr><td><c:out value="${student.id}"/></td>
-            <td><c:out value="${student.name}"/></td>
-        </tr>
+<%--    </tr>--%>
 
-    </c:forEach>
-</table>
-<h2>${me.name}</h2>
+<%--    <c:forEach var="student" items="${students}">--%>
+<%--        <tr><td><c:out value="${student.id}"/></td>--%>
+<%--            <td><c:out value="${student.firstName}"/></td>--%>
+<%--            <td><c:out value="${student.lastName}"/></td>--%>
+<%--            <td><c:out value="${student.email}"/></td>--%>
+<%--            <td><c:out value="${student.dob}"/></td>--%>
+<%--            <td><c:out value="${student.age}"/></td>--%>
+<%--        </tr>--%>
+
+<%--    </c:forEach>--%>
+<%--</table>--%>
+
 </body>
-</html>dd
+</html>
+
+
+
+
+
+
+
+
+

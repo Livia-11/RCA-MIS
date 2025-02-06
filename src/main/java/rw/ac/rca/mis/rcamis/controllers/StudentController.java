@@ -42,7 +42,7 @@ public class StudentController extends HttpServlet {
         LocalDate dob = LocalDate.parse(date, pattern);
         Student student1 = new Student(fname,lname,email, 12,dob);
         service.addStudent(student1);
-        request.getRequestDispatcher("WEB-INF/students.jsp").forward(request, response);
+        request.getRequestDispatcher("WEB-INF/register.jsp").forward(request, response);
     }
 
     /**
@@ -57,28 +57,9 @@ public class StudentController extends HttpServlet {
         LocalDate dob = LocalDate.parse(date, pattern);
         Student student1 = new Student(fname,lname,email, 12,dob);
         service.addStudent(student1);
-        request.getRequestDispatcher("WEB-INF/students.jsp").forward(request, response);
+
+        request.getRequestDispatcher("WEB-INF/register.jsp").forward(request, response);
     }
 
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

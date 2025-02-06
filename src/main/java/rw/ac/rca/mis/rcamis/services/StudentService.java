@@ -10,24 +10,20 @@ import java.time.LocalDate;
 
 public class StudentService {
     protected static SessionFactory sf = HibernateUtil.getSessionFactory();
-    protected static Session session ;
-    protected static StudentService studentService;
-    public StudentService getInstance() {
-        if (studentService == null)
+    protected static Session session;
+    protected static StudentService studentServices;
+    public static StudentService getInstance() {
+        if (studentServices == null)
             return new StudentService();
-        return studentService;
-
+        return studentServices;
     }
-    private StudentService(){
+    private StudentService() {}
 
-    }
-    public void add(Student student) {
+    public void addStudent(Student student) {
         Session session = sf.openSession();
         try {
             Transaction transaction = session.beginTransaction();
-            Student student1 = new Student(1, "Mike", "Mugabo", "mike@gmail.com", 12, LocalDate.now());
-            session.persist(student1);
-            session.persist(student1);
+            session.persist(student);
             transaction.commit();
         }
         finally {
@@ -35,22 +31,3 @@ public class StudentService {
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
